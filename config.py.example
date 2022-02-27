@@ -1,0 +1,2 @@
+MONGO_URI = 'mongodb://example.com/database'
+w3c_url = 'https://website-backend.w3champions.com/api/players/'
