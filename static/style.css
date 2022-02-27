@@ -1,0 +1,21 @@
+.bracket-container {
+    margin: 2rem 10rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bracket th, .bracket td {
+    padding: 2px 5px;
+}
+
+.bracket h2, .bracket h3 {
+    text-align: center;
+}
+
+.bracket td img {
+    width: 100%;
+}
+
+.bracket td:first-child {
+    max-width: 45px;
+}

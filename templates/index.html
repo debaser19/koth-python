@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <form action="/add_users" method="post">
+            <input type='text' placeholder='Username#0000'
+            name='username' />
+            <select name='race'>
+                <option value="0">Random</option>
+                <option value="1">Human</option>
+                <option value="2">Orc</option>
+                <option value="4">Night Elf</option>
+                <option value="8">Undead</option>
+            </select>
+            <button type='submit'>Submit</button>
+        </form>
+
+        <div class="bracket-container">
+            <div class="bracket bracket-3">
+                <h2>&lt; 1450</h2>
+                <div>
+                    {% for king in kings %}
+                    {% if king['bracket'] == 3 %}
+                        <h3>{{ king['username'] }}</h3>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Race</th>
+                            <th>Username</th>
+                            <th>MMR</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        {% if user['bracket'] == 3 and user['is_king'] == false %}
+                            <tr>
+                                <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
+                                <td>{{ user['username'] }}</td>
+                                <td>{{ user['mmr'] }}</td>
+                                <td><a href='/delete_user?username={{ user["username"].replace("#", "%23") }}''>x</a></td>
+                                <td><a href='/make_king?username={{ user["username"].replace("#", "%23") }}&bracket={{ user["bracket"] }}'>king</a></td>
+                            </tr>
+                        {% endif %}
+                        {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bracket bracket-2">
+                <h2>1450 - 1600</h2>
+                <div>
+                    {% for king in kings %}
+                    {% if king['bracket'] == 2 %}
+                        <h3>{{ king['username'] }}</h3>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Race</th>
+                            <th>Username</th>
+                            <th>MMR</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        {% if user['bracket'] == 2 and user['is_king'] == false %}
+                            <tr>
+                                <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
+                                <td>{{ user['username'] }}</td>
+                                <td>{{ user['mmr'] }}</td>
+                                <td><a href='/delete_user?username={{ user["username"].replace("#", "%23") }}''>x</a></td>
+                                <td><a href='/make_king?username={{ user["username"].replace("#", "%23") }}&bracket={{ user["bracket"] }}'>king</a></td>
+                            </tr>
+                        {% endif %}
+                        {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bracket bracket-1">
+                <h2>&gt; 1600</h2>
+                <div>
+                    {% for king in kings %}
+                    {% if king['bracket'] == 1 %}
+                        <h3>{{ king['username'] }}</h3>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Race</th>
+                            <th>Username</th>
+                            <th>MMR</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        {% if user['bracket'] == 1 and user['is_king'] == false %}
+                            <tr>
+                                <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
+                                <td>{{ user['username'] }}</td>
+                                <td>{{ user['mmr'] }}</td>
+                                <td><a href='/delete_user?username={{ user["username"].replace("#", "%23") }}''>x</a></td>
+                                <td><a href='/make_king?username={{ user["username"].replace("#", "%23") }}&bracket={{ user["bracket"] }}'>king</a></td>
+                            </tr>
+                        {% endif %}
+                        {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
