@@ -1,7 +1,29 @@
+body {
+    background: #333;
+    background-image: -webkit-linear-gradient(15deg, rgb(201, 132, 5) 0 15%, #333 0 85%, rgb(201, 132, 5) 0 10%);
+    color: #fff;
+}
+
+.koth-command {
+    position: absolute;
+    top: 45%;
+    left: 15px;
+    font-size: 40px;
+    color: #333;
+}
+
 .bracket-container {
     margin: 2rem 10rem;
     display: flex;
     justify-content: space-around;
+}
+
+.challengers-table {
+    font-size: 20px;
+    margin: 0 auto;
+}
+.challengers-table a {
+    text-decoration: none;
 }
 
 .bracket th, .bracket td {
@@ -18,4 +40,41 @@
 
 .bracket td:first-child {
     max-width: 45px;
+}
+
+.bracket-header {
+    margin: 5rem 0 1rem 0;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bracket-header h2 {
+    display: inline;
+}
+
+.bracket-header img {
+    display: inline;
+    width: 15%;
+    vertical-align: middle;
+}
+
+.current-king {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
+.current-king h2 {
+    display: inline;
+}
+.current-king img {
+    display: inline;
+    width: 20%;
+    vertical-align: middle;
+}
+
+.crown {
+    width: 25px!important;
 }
