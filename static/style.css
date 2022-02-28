@@ -3,6 +3,10 @@ body {
     background-image: -webkit-linear-gradient(15deg, rgb(201, 132, 5) 0 15%, #333 0 85%, rgb(201, 132, 5) 0 10%);
     color: #fff;
 }
+body.transparent {
+    background: transparent;
+    color: white;
+}
 
 .kings-header {
     display: flex;

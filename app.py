@@ -22,6 +22,18 @@ def list_brackets():
         kings=kings,
         )
 
+@app.route('/overlay', methods=['POST', 'GET'])
+def show_overlay():
+    users = list(mongo.db.koths.find())
+    kings = list(mongo.db.koths.find({'is_king': True}))
+
+    return render_template(
+        'overlay.html',
+        title='Gym KOTH!',
+        users=users,
+        kings=kings,
+        )
+
 @app.route('/manage', methods=['POST', 'GET'])
 def query_records():
     users = list(mongo.db.koths.find())
