@@ -5,6 +5,7 @@
     </head>
     <body>
         <!-- <p class="koth-command">!koth</p> -->
+        <!-- auto lookup w3c -->
         <form action="/add_users" method="post">
             <input type='text' placeholder='Username#0000'
             name='username' />
@@ -15,6 +16,21 @@
                 <option value="4">Night Elf</option>
                 <option value="8">Undead</option>
             </select>
+            <button type='submit'>Submit</button>
+        </form>
+
+        <!-- manual add -->
+        <form action="/manual_add_users" method="post">
+            <input type='text' placeholder='Username#0000'
+            name='username' />
+            <select name='race'>
+                <option value="0">Random</option>
+                <option value="1">Human</option>
+                <option value="2">Orc</option>
+                <option value="4">Night Elf</option>
+                <option value="8">Undead</option>
+            </select>
+            <input type="text" placeholder="1500" name="mmr" size="5" />
             <button type='submit'>Submit</button>
         </form>
 
@@ -36,7 +52,7 @@
                 </div>
                 <div class="bracket-header">
                     <img src="/static/badges/bracket_3_badge.png" />
-                    <h2>&lt; 1450</h2>
+                    <h2>UNDER 1450</h2>
                 </div>
                 <table class="challengers-table">
                     <tbody>
@@ -107,7 +123,7 @@
                 </div>
                 <div class="bracket-header">
                     <img src="/static/badges/bracket_1_badge.png" />
-                    <h2>&gt; 1600</h2>
+                    <h2>OVER 1600</h2>
                 </div>
                 <table class="challengers-table">
                     <tbody>

@@ -84,6 +84,35 @@ def add_user():
 
     return redirect(request.referrer)
 
+@app.route('/manual_add_users', methods=['POST', 'GET'])
+def manual_add_user():
+    username = request.form['username']
+    race = request.form['race']
+    mmr = request.form['mmr']
+
+    # determine bracket based on mmr
+    if int(mmr) > 1600:
+        bracket = 1
+    elif int(mmr) < 1450:
+        bracket = 3
+    else:
+        bracket = 2
+    user = {
+        'username': username.replace('%23', '#'),
+        'race': int(race),
+        'mmr': int(mmr),
+        'bracket': bracket,
+        'is_king': False
+    }
+
+    try:
+        mongo.db.koths.insert_one(user)
+        print('Added document to db')
+    except Exception as e:
+        print(f'Error adding document: {e}')
+
+    return redirect(request.referrer)
+
 @app.route('/new_signup', methods=['POST', 'GET'])
 def user_signup():
     username = request.form['username'].replace('#', '%23')

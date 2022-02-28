@@ -1,0 +1,23 @@
+name: Deploy koth flask app
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: Deploy flask app
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull changes from master
+      uses: fifsky/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        user: sstoveld
+        key: ${{ secrets.SSH_SECRET }}
+        port: 22
+        command: |
+          cd /home/sstoveld/dev/koth-python
+          git pull origin master
+          source .venv/bin/activate
+          pip3 install -r requirements.txt
