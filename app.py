@@ -34,6 +34,7 @@ def show_overlay():
         kings=kings,
         )
 
+# TODO: Add forms on /manage to manually input MMR for players that have no S10 stats
 @app.route('/manage', methods=['POST', 'GET'])
 def query_records():
     users = list(mongo.db.koths.find())

@@ -1,6 +1,11 @@
 body {
-    background: #333;
-    background-image: -webkit-linear-gradient(15deg, rgb(201, 132, 5) 0 15%, #333 0 85%, rgb(201, 132, 5) 0 10%);
+    /* background: #333;
+    background-image: -webkit-linear-gradient(15deg, rgb(201, 132, 5) 0 15%, #333 0 85%, rgb(201, 132, 5) 0 10%); */
+    background: url(/static/koth_bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: #fff;
 }
 body.transparent {
@@ -13,13 +18,13 @@ body.transparent {
     justify-content: center;
 }
 
-.koth-command {
+/* .koth-command {
     position: absolute;
     top: 45%;
     left: 15px;
     font-size: 40px;
     color: #333;
-}
+} */
 
 .signup-container {
     display: flex;
@@ -29,7 +34,7 @@ body.transparent {
 }
 
 .bracket-container {
-    margin: 2rem 25rem;
+    margin: 3% 15%;
     display: flex;
     justify-content: space-around;
 }
@@ -40,6 +45,10 @@ body.transparent {
 }
 .challengers-table a {
     text-decoration: none;
+}
+
+.bracket {
+    width: 33%;
 }
 
 .bracket th, .bracket td {
