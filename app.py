@@ -132,8 +132,3 @@ def make_king():
     print(f'Made {user["username"]} king!')
 
     return redirect(request.referrer)
-
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5001')
