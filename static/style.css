@@ -4,6 +4,11 @@ body {
     color: #fff;
 }
 
+.kings-header {
+    display: flex;
+    justify-content: center;
+}
+
 .koth-command {
     position: absolute;
     top: 45%;
@@ -12,8 +17,15 @@ body {
     color: #333;
 }
 
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    margin: 10rem;
+}
+
 .bracket-container {
-    margin: 2rem 10rem;
+    margin: 2rem 25rem;
     display: flex;
     justify-content: space-around;
 }
@@ -65,6 +77,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 4rem;
+    padding-bottom: 50px;
+    border-bottom: 10px solid rgb(201, 132, 5);
 }
 .current-king h2 {
     display: inline;
@@ -77,4 +91,13 @@ body {
 
 .crown {
     width: 25px!important;
+}
+
+.signup-header, .signup-return {
+    display: flex;
+    justify-content: center;
+}
+.signup-return a {
+    color: #fff;
+    font-size: 25px;
 }

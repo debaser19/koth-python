@@ -11,7 +11,7 @@ mongo = PyMongo(app)
 
 
 @app.route('/', methods=['POST', 'GET'])
-def query_records():
+def list_brackets():
     users = list(mongo.db.koths.find())
     kings = list(mongo.db.koths.find({'is_king': True}))
 
@@ -21,6 +21,25 @@ def query_records():
         users=users,
         kings=kings,
         )
+
+@app.route('/manage', methods=['POST', 'GET'])
+def query_records():
+    users = list(mongo.db.koths.find())
+    kings = list(mongo.db.koths.find({'is_king': True}))
+
+    return render_template(
+        'manage.html',
+        title='Gym KOTH!',
+        users=users,
+        kings=kings,
+        )
+
+@app.route('/signup', methods=['POST', 'GET'])
+def signup_user():
+    return render_template(
+        'signup.html',
+        title='KOTH Sign up',
+    )
 
 @app.route('/add_users', methods=['POST', 'GET'])
 def add_user():
@@ -51,6 +70,36 @@ def add_user():
                 print(f'Error adding document: {e}')
 
     return redirect(request.referrer)
+
+@app.route('/new_signup', methods=['POST', 'GET'])
+def user_signup():
+    username = request.form['username'].replace('#', '%23')
+    race = request.form['race']
+    res = requests.get(config.w3c_url + username + '/game-mode-stats?gateWay=20&season=10')
+    for item in res.json():
+        if item['gameMode'] == 1 and item['race'] == int(race):
+            # determine bracket based on mmr
+            if int(item['mmr']) > 1600:
+                bracket = 1
+            elif int(item['mmr']) < 1450:
+                bracket = 3
+            else:
+                bracket = 2
+            user = {
+                'username': username.replace('%23', '#'),
+                'race': int(race),
+                'mmr': int(item["mmr"]),
+                'bracket': bracket,
+                'is_king': False
+            }
+
+            try:
+                mongo.db.koths.insert_one(user)
+                print('Added document to db')
+            except Exception as e:
+                print(f'Error adding document: {e}')
+
+    return redirect('/')
 
 
 @app.route('/delete_user', methods=['GET'])
