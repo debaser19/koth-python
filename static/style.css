@@ -40,7 +40,7 @@ body.transparent {
 }
 
 .challengers-table {
-    font-size: 20px;
+    font-size: 25px;
     margin: 0 auto;
 }
 .challengers-table a {
@@ -95,6 +95,9 @@ body.transparent {
 }
 .current-king h2 {
     display: inline;
+}
+.current-king h3 {
+    font-size: 30px;
 }
 .current-king img {
     display: inline;
