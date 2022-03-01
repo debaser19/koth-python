@@ -8,12 +8,6 @@
         <meta http-equiv="refresh" content="30">
     </head>
     <body class='transparent overlay'>
-
-        <div class="kings-header">
-            <h1>CURRENT KINGS</h1>
-        </div>
-        
-
         <div class="bracket-container">
             <div class="bracket bracket-3">
                 
@@ -36,7 +30,7 @@
                         {% if user['bracket'] == 3 and user['is_king'] == false %}
                             <tr>
                                 <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td>{{ user['username'] }}</td>
+                                <td class="td-username">{{ user['username'] }}</td>
                                 <td>[{{ user['mmr'] }}]</td>
                             </tr>
                         {% endif %}
@@ -66,7 +60,7 @@
                         {% if user['bracket'] == 2 and user['is_king'] == false %}
                             <tr>
                                 <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td>{{ user['username'] }}</td>
+                                <td class="td-username">{{ user['username'] }}</td>
                                 <td>[{{ user['mmr'] }}]</td>
                             </tr>
                         {% endif %}
@@ -95,7 +89,7 @@
                         {% if user['bracket'] == 1 and user['is_king'] == false %}
                             <tr>
                                 <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td>{{ user['username'] }}</td>
+                                <td class="td-username">{{ user['username'] }}</td>
                                 <td>[{{ user['mmr'] }}]</td>
                             </tr>
                         {% endif %}

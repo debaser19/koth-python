@@ -16,15 +16,22 @@ body.transparent {
 body.overlay {
     font-size: 45px;
 }
-body.overlay .current-king h3 {
+/* body.overlay .current-king h3 {
     font-size: 40px;
-}
+} */
 body.overlay .bracket-header h2 {
     font-size: 40px;
 }
 body.overlay .challengers-table {
     font-size: 30px;
 }
+body.overlay .current-king {
+    border: none;
+    padding: 100px 0;
+}
+/* body.overlay .bracket-container {
+    padding-top: 60px;
+} */
 
 .kings-header {
     display: flex;
@@ -83,7 +90,15 @@ body.overlay .challengers-table {
     max-width: 45px;
 }
 
+.td-username {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
 .bracket-header {
+    color: rgb(227, 134, 67);
     margin: 5rem 0 1rem 0;
     height: 3rem;
     display: flex;
