@@ -32,6 +32,7 @@ body.overlay .challengers-table {
 }
 .kings-header h1 {
     font-size: 45px;
+    color: rgb(227, 134, 67);
 }
 
 /* .koth-command {
@@ -94,6 +95,7 @@ body.overlay .challengers-table {
 .bracket-header h2 {
     display: inline;
     font-size: 30px;
+    color: rgb(227, 134, 67);
 }
 
 .bracket-header img {
