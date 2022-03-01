@@ -7,6 +7,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     color: #fff;
+    font-family: 'Lato', sans-serif;
 }
 body.transparent {
     background: transparent;
@@ -16,6 +17,9 @@ body.transparent {
 .kings-header {
     display: flex;
     justify-content: center;
+}
+.kings-header h1 {
+    font-size: 45px;
 }
 
 /* .koth-command {
@@ -40,7 +44,7 @@ body.transparent {
 }
 
 .challengers-table {
-    font-size: 25px;
+    font-size: 35px;
     margin: 0 auto;
 }
 .challengers-table a {
@@ -77,6 +81,7 @@ body.transparent {
 
 .bracket-header h2 {
     display: inline;
+    font-size: 40px;
 }
 
 .bracket-header img {
@@ -97,7 +102,7 @@ body.transparent {
     display: inline;
 }
 .current-king h3 {
-    font-size: 30px;
+    font-size: 40px;
 }
 .current-king img {
     display: inline;
@@ -106,7 +111,7 @@ body.transparent {
 }
 
 .crown {
-    width: 25px!important;
+    width: 45px!important;
 }
 
 .signup-header, .signup-return {
