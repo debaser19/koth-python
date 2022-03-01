@@ -7,6 +7,7 @@ import config
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = config.MONGO_URI
+app.config.update(TEMPLATES_AUTO_RELOAD=True)
 mongo = PyMongo(app)
 
 
