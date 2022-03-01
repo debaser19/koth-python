@@ -63,7 +63,7 @@
                         {% if user['bracket'] == 3 and user['is_king'] == false %}
                             <tr>
                                 <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td>{{ user['username'] }}</td>
+                                <td class="td-username">{{ user['username'] }}</td>
                                 <td>[{{ user['mmr'] }}]</td>
                                 <td><a href='/delete_user?username={{ user["username"].replace("#", "%23") }}''>&#10060;</a></td>
                                 <td>
@@ -99,7 +99,7 @@
                         {% if user['bracket'] == 2 and user['is_king'] == false %}
                             <tr>
                                 <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td>{{ user['username'] }}</td>
+                                <td class="td-username">{{ user['username'] }}</td>
                                 <td>[{{ user['mmr'] }}]</td>
                                 <td><a href='/delete_user?username={{ user["username"].replace("#", "%23") }}''>&#10060;</a></td>
                                 <td>
@@ -134,7 +134,7 @@
                         {% if user['bracket'] == 1 and user['is_king'] == false %}
                             <tr>
                                 <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td>{{ user['username'] }}</td>
+                                <td class="td-username">{{ user['username'] }}</td>
                                 <td>[{{ user['mmr'] }}]</td>
                                 <td><a href='/delete_user?username={{ user["username"].replace("#", "%23") }}''>&#10060;</a></td>
                                 <td>
