@@ -30,7 +30,7 @@ def show_overlay():
 
     return render_template(
         'overlay.html',
-        title='Gym KOTH!',
+        title='GYM KOTH - Twitch Overlay',
         users=users,
         kings=kings,
         )
@@ -43,7 +43,7 @@ def query_records():
 
     return render_template(
         'manage.html',
-        title='Gym KOTH!',
+        title='Gym KOTH - Management',
         users=users,
         kings=kings,
         )
@@ -52,7 +52,7 @@ def query_records():
 def signup_user():
     return render_template(
         'signup.html',
-        title='KOTH Sign up',
+        title='Gym KOTH - Sign up',
     )
 
 @app.route('/add_users', methods=['POST', 'GET'])
