@@ -13,6 +13,18 @@ body.transparent {
     background: transparent;
     color: white;
 }
+body.overlay {
+    font-size: 45px;
+}
+body.overlay .current-king h3 {
+    font-size: 40px;
+}
+body.overlay .bracket-header h2 {
+    font-size: 40px;
+}
+body.overlay .challengers-table {
+    font-size: 30px;
+}
 
 .kings-header {
     display: flex;
@@ -44,7 +56,7 @@ body.transparent {
 }
 
 .challengers-table {
-    font-size: 35px;
+    font-size: 20px;
     margin: 0 auto;
 }
 .challengers-table a {
@@ -81,7 +93,7 @@ body.transparent {
 
 .bracket-header h2 {
     display: inline;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .bracket-header img {
@@ -102,7 +114,7 @@ body.transparent {
     display: inline;
 }
 .current-king h3 {
-    font-size: 40px;
+    font-size: 30px;
 }
 .current-king img {
     display: inline;
@@ -111,7 +123,7 @@ body.transparent {
 }
 
 .crown {
-    width: 45px!important;
+    width: 30px!important;
 }
 
 .signup-header, .signup-return {
