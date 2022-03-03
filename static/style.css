@@ -9,23 +9,23 @@ body {
     color: #fff;
     font-family: 'Lato', sans-serif;
 }
-body.transparent {
+.transparent {
     background: transparent;
     color: white;
 }
-body.overlay {
+.overlay {
     font-size: 45px;
 }
 /* body.overlay .current-king h3 {
     font-size: 40px;
 } */
-body.overlay .bracket-header h2 {
+.overlay .bracket-header h2 {
     font-size: 40px;
 }
-body.overlay .challengers-table {
+.overlay .challengers-table {
     font-size: 30px;
 }
-body.overlay .current-king {
+.overlay .current-king {
     border: none;
     padding: 100px 0;
 }

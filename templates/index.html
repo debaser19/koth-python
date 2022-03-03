@@ -1,108 +1,98 @@
-<html>
-    <head>
-        <title>{{ title }}</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- <p class="koth-command">!koth</p> -->
+{% extends 'layout.html' %}
+{% block content %}
+<div class="kings-header">
+    <h1>CURRENT KINGS</h1>
+</div>
 
-        <div class="kings-header">
-            <h1>CURRENT KINGS</h1>
+
+<div class="bracket-container">
+    <div class="bracket bracket-3">
+        
+        <div class="current-king">
+            {% for king in kings %}
+            {% if king['bracket'] == 3 %}
+                <img src="/static/badges/bracket_3_king.png" />
+                <h3>{{ king['username'] }}</h3>
+            {% endif %}
+            {% endfor %}
+            
+        </div>
+        <div class="bracket-header">
+            <img src="/static/badges/bracket_3_badge.png" />
+            <h2>UNDER 1450</h2>
+        </div>
+        <table class="challengers-table">
+            <tbody>
+                {% for user in users %}
+                {% if user['bracket'] == 3 and user['is_king'] == false %}
+                    <tr>
+                        <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
+                        <td class="td-username">{{ user['username'] }}</td>
+                        <td>[{{ user['mmr'] }}]</td>
+                    </tr>
+                {% endif %}
+                {%  endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bracket bracket-2">
+        
+        <div class="current-king">
+            {% for king in kings %}
+            {% if king['bracket'] == 2 %}
+            <img src="/static/badges/bracket_2_king.png" />
+                <h3>{{ king['username'] }}</h3>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="bracket-header">
+            <img src="/static/badges/bracket_2_badge.png" />
+            <h2>1450 - 1600</h2>
         </div>
         
+        <table class="challengers-table">
+            <tbody>
+                {% for user in users %}
+                {% if user['bracket'] == 2 and user['is_king'] == false %}
+                    <tr>
+                        <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
+                        <td class="td-username">{{ user['username'] }}</td>
+                        <td>[{{ user['mmr'] }}]</td>
+                    </tr>
+                {% endif %}
+                {%  endfor %}
+            </tbody>
+        </table>
+    </div>
 
-        <div class="bracket-container">
-            <div class="bracket bracket-3">
-                
-                <div class="current-king">
-                    {% for king in kings %}
-                    {% if king['bracket'] == 3 %}
-                        <img src="/static/badges/bracket_3_king.png" />
-                        <h3>{{ king['username'] }}</h3>
-                    {% endif %}
-                    {% endfor %}
-                    
-                </div>
-                <div class="bracket-header">
-                    <img src="/static/badges/bracket_3_badge.png" />
-                    <h2>UNDER 1450</h2>
-                </div>
-                <table class="challengers-table">
-                    <tbody>
-                        {% for user in users %}
-                        {% if user['bracket'] == 3 and user['is_king'] == false %}
-                            <tr>
-                                <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td class="td-username">{{ user['username'] }}</td>
-                                <td>[{{ user['mmr'] }}]</td>
-                            </tr>
-                        {% endif %}
-                        {%  endfor %}
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="bracket bracket-2">
-                
-                <div class="current-king">
-                    {% for king in kings %}
-                    {% if king['bracket'] == 2 %}
-                    <img src="/static/badges/bracket_2_king.png" />
-                        <h3>{{ king['username'] }}</h3>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="bracket-header">
-                    <img src="/static/badges/bracket_2_badge.png" />
-                    <h2>1450 - 1600</h2>
-                </div>
-                
-                <table class="challengers-table">
-                    <tbody>
-                        {% for user in users %}
-                        {% if user['bracket'] == 2 and user['is_king'] == false %}
-                            <tr>
-                                <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td class="td-username">{{ user['username'] }}</td>
-                                <td>[{{ user['mmr'] }}]</td>
-                            </tr>
-                        {% endif %}
-                        {%  endfor %}
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="bracket bracket-1">
-                
-                <div class="current-king">
-                    {% for king in kings %}
-                    {% if king['bracket'] == 1 %}
-                    <img src="/static/badges/bracket_1_king.png" />
-                        <h3>{{ king['username'] }}</h3>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="bracket-header">
-                    <img src="/static/badges/bracket_1_badge.png" />
-                    <h2>OVER 1600</h2>
-                </div>
-                <table class="challengers-table">
-                    <tbody>
-                        {% for user in users %}
-                        {% if user['bracket'] == 1 and user['is_king'] == false %}
-                            <tr>
-                                <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                                <td class="td-username">{{ user['username'] }}</td>
-                                <td>[{{ user['mmr'] }}]</td>
-                            </tr>
-                        {% endif %}
-                        {%  endfor %}
-                    </tbody>
-                </table>
-            </div>
+    <div class="bracket bracket-1">
+        
+        <div class="current-king">
+            {% for king in kings %}
+            {% if king['bracket'] == 1 %}
+            <img src="/static/badges/bracket_1_king.png" />
+                <h3>{{ king['username'] }}</h3>
+            {% endif %}
+            {% endfor %}
         </div>
-    </body>
-</html>
+        <div class="bracket-header">
+            <img src="/static/badges/bracket_1_badge.png" />
+            <h2>OVER 1600</h2>
+        </div>
+        <table class="challengers-table">
+            <tbody>
+                {% for user in users %}
+                {% if user['bracket'] == 1 and user['is_king'] == false %}
+                    <tr>
+                        <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
+                        <td class="td-username">{{ user['username'] }}</td>
+                        <td>[{{ user['mmr'] }}]</td>
+                    </tr>
+                {% endif %}
+                {%  endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

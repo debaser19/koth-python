@@ -1,39 +1,28 @@
-<html>
-    <head>
-        <title>{{ title }}</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- <p class="koth-command">!koth</p> -->
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="signup-header">
+        <h1>KOTH Sign Up Form</h1>
+    </div>
 
-        <div class="signup-header">
-            <h1>KOTH Sign Up Form</h1>
-        </div>
-
-        <div class="signup-container">
+    <div class="signup-container">
 
 
-            <form action="/new_signup" method="post">
-                <input type='text' placeholder='Username#0000'
-                name='username' />
-                <select name='race'>
-                    <option value="0">Random</option>
-                    <option value="1">Human</option>
-                    <option value="2">Orc</option>
-                    <option value="4">Night Elf</option>
-                    <option value="8">Undead</option>
-                </select>
-                <button type='submit'>Submit</button>
-            </form>
-            
-        </div>
+        <form action="/new_signup" method="post">
+            <input type='text' placeholder='Username#0000'
+            name='username' />
+            <select name='race'>
+                <option value="0">Random</option>
+                <option value="1">Human</option>
+                <option value="2">Orc</option>
+                <option value="4">Night Elf</option>
+                <option value="8">Undead</option>
+            </select>
+            <button type='submit'>Submit</button>
+        </form>
+        
+    </div>
 
-        <div class="signup-return">
-            <a href='/'>View current bracket</a>
-        </div>
-
-    </body>
-</html>
+    <div class="signup-return">
+        <a href='/'>View current bracket</a>
+    </div>
+{% endblock %}
