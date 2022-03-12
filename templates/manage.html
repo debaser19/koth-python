@@ -40,7 +40,12 @@
                 {% for king in kings %}
                 {% if king['bracket'] == 3 %}
                     <img src="/static/badges/bracket_3_king.png" />
-                    <h3>{{ king['username'] }}</h3>
+                    <h3>
+                        {{ king['username'] }}
+                        <a href='/remove_king?bracket={{ king["bracket"] }}'>
+                            &#10060;
+                        </a>
+                    </h3>
                 {% endif %}
                 {% endfor %}
                 
@@ -76,7 +81,12 @@
                 {% for king in kings %}
                 {% if king['bracket'] == 2 %}
                 <img src="/static/badges/bracket_2_king.png" />
-                    <h3>{{ king['username'] }}</h3>
+                <h3>
+                    {{ king['username'] }}
+                    <a href='/remove_king?bracket={{ king["bracket"] }}'>
+                        &#10060;
+                    </a>
+                </h3>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -112,7 +122,12 @@
                 {% for king in kings %}
                 {% if king['bracket'] == 1 %}
                 <img src="/static/badges/bracket_1_king.png" />
-                    <h3>{{ king['username'] }}</h3>
+                <h3>
+                    {{ king['username'] }}
+                    <a href='/remove_king?bracket={{ king["bracket"] }}'>
+                        &#10060;
+                    </a>
+                </h3>
                 {% endif %}
                 {% endfor %}
             </div>

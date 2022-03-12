@@ -158,7 +158,6 @@ def delete_user():
 
 @app.route('/make_king', methods=['GET'])
 def make_king():
-    print('HOTDOGS')
     # delete old king
     bracket = int(request.args.get('bracket'))
     old_king = {
@@ -170,8 +169,38 @@ def make_king():
 
     # make new king
     user = {'username': request.args.get('username').replace('%23', '#')}
+    print(f'Username: {user}')
     new_value = {'$set': {'is_king': True}}
     mongo.db.koths.update_one(user, new_value)
     print(f'Made {user["username"]} king!')
+
+    return redirect(request.referrer)
+
+
+@app.route('/remove_king', methods=['GET'])
+def remove_king():
+    # delete old king
+    bracket = int(request.args.get('bracket'))
+    old_king = {
+        'is_king': True,
+        'bracket': bracket
+    }
+    mongo.db.koths.delete_one(old_king)
+    print(f'Deleted old king: {old_king}')
+
+    # make king vacant
+    user = {
+        'username': 'VACANT',
+        'race': 0,
+        'mmr': 0,
+        'bracket': bracket,
+        'is_king': True
+    }
+
+    try:
+        mongo.db.koths.insert_one(user)
+        print('Added document to db')
+    except Exception as e:
+        print(f'Error adding document: {e}')
 
     return redirect(request.referrer)
