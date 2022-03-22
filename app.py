@@ -142,7 +142,7 @@ def user_signup():
             except Exception as e:
                 print(f'Error adding document: {e}')
 
-    return redirect('/')
+    return redirect(request.referrer)
 
 
 @app.route('/delete_user', methods=['GET'])
