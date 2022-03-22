@@ -17,7 +17,6 @@ jobs:
         key: ${{ secrets.SSH_SECRET }}
         port: 22
         command: |
-          cd /home/sstoveld/dev/koth-python
+          cd koth-python
           git pull origin master
-          source .venv/bin/activate
-          pip3 install -r requirements.txt
+          docker-compose up
