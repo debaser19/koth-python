@@ -13,7 +13,7 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
-        user: root
+        user: ${{ secrets.USER }}
         key: ${{ secrets.SSHKEY }}
         port: 22
         command: |
