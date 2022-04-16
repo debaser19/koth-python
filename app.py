@@ -59,7 +59,7 @@ def signup_user():
 def add_user():
     username = request.form['username'].replace('#', '%23')
     race = request.form['race']
-    res = requests.get(config.w3c_url + username + '/game-mode-stats?gateWay=20&season=10')
+    res = requests.get(config.w3c_url + username + '/game-mode-stats?gateWay=20&season=11')
     for item in res.json():
         if item['gameMode'] == 1 and item['race'] == int(race):
             # determine bracket based on mmr
@@ -118,7 +118,7 @@ def manual_add_user():
 def user_signup():
     username = request.form['username'].replace('#', '%23')
     race = request.form['race']
-    res = requests.get(config.w3c_url + username + '/game-mode-stats?gateWay=20&season=10')
+    res = requests.get(config.w3c_url + username + '/game-mode-stats?gateWay=20&season=11')
     for item in res.json():
         if item['gameMode'] == 1 and item['race'] == int(race):
             # determine bracket based on mmr
