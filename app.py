@@ -12,7 +12,7 @@ mongo = PyMongo(app)
 
 
 def get_mmr(user, race):
-    season = 11
+    season = 12
     while season > 0:
         res = requests.get(config.w3c_url + user.replace("#", "%23") + f'/game-mode-stats?gateWay=20&season={season}')
         for item in res.json():
