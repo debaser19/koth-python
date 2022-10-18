@@ -12,7 +12,7 @@
             {% for king in kings %}
             {% if king['bracket'] == 3 %}
                 <img src="/static/badges/bracket_3_king.png" />
-                <h3>{{ king['username'] }}</h3>
+                <h3>{{ king['short_name'] }}</h3>
             {% endif %}
             {% endfor %}
             
@@ -27,7 +27,7 @@
                 {% if user['bracket'] == 3 and user['is_king'] == false %}
                     <tr>
                         <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                        <td class="td-username">{{ user['username'] }}</td>
+                        <td class="td-username">{{ user['short_name'] }}</td>
                         <td>[{{ user['mmr'] }}]</td>
                     </tr>
                 {% endif %}
@@ -42,7 +42,7 @@
             {% for king in kings %}
             {% if king['bracket'] == 2 %}
             <img src="/static/badges/bracket_2_king.png" />
-                <h3>{{ king['username'] }}</h3>
+                <h3>{{ king['short_name'] }}</h3>
             {% endif %}
             {% endfor %}
         </div>
@@ -57,7 +57,7 @@
                 {% if user['bracket'] == 2 and user['is_king'] == false %}
                     <tr>
                         <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                        <td class="td-username">{{ user['username'] }}</td>
+                        <td class="td-username">{{ user['short_name'] }}</td>
                         <td>[{{ user['mmr'] }}]</td>
                     </tr>
                 {% endif %}
@@ -72,7 +72,7 @@
             {% for king in kings %}
             {% if king['bracket'] == 1 %}
             <img src="/static/badges/bracket_1_king.png" />
-                <h3>{{ king['username'] }}</h3>
+                <h3>{{ king['short_name'] }}</h3>
             {% endif %}
             {% endfor %}
         </div>
@@ -86,7 +86,7 @@
                 {% if user['bracket'] == 1 and user['is_king'] == false %}
                     <tr>
                         <td><img src='/static/race_icons/{{ user["race"] }}.png' /></td>
-                        <td class="td-username">{{ user['username'] }}</td>
+                        <td class="td-username">{{ user['short_name'] }}</td>
                         <td>[{{ user['mmr'] }}]</td>
                     </tr>
                 {% endif %}
